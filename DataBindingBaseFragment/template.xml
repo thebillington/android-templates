@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<template
+    format="1"
+    revision="1"
+    name="Fragment (Data Bound Base Fragment)"
+    description="Creates a data bound base fragment, compatible with the BaseFragment class"
+    minApi="23"
+    minBuildApi="29">
+
+    <category value="Fragment" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="className"
+        name="Fragment Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="BlankFragment"
+        help="The name of the fragment class to create" />
+
+    <parameter
+        id="fragmentBindingName"
+        name="Fragment Binding Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="FragmentBlankBinding"
+        help="The name of the layout to create (e.g. FragmentMainBinding)" />
+
+    <parameter
+        id="fragmentName"
+        name="Fragment Layout Name"
+        type="string"
+        constraints="layout|nonempty|unique"
+        default="fragment_blank"
+        suggest="${fragmentToLayout(className)}"
+        help="The name of the layout to create" />
+
+    <thumbs>
+        <thumb>template_blank_fragment.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
