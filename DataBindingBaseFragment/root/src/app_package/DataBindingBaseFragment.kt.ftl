@@ -14,12 +14,12 @@ class ${className} : BaseFragment() {
         layoutID = R.layout.${fragmentName}
     }
 
-    override fun initBinding() {
-        mBinding = mBindingRoot as ${fragmentBindingName}
-    }
-
     override fun initViewModels() {
 
+    }
+
+    override fun initBinding() {
+        mBinding = mBindingRoot as ${fragmentBindingName}
     }
 
     override fun initObservers() {
